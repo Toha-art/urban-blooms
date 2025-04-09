@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Bloom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Navbar -->
+  <header class="shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Urban Bloom</h1>
+    <nav>
+      <ul class="flex gap-4">
+        <li><a href="#" class="hover:text-pink-500">Home</a></li>
+        <li><a href="#products" class="hover:text-pink-500">Shop</a></li>
+        <li><a href="#contact" class="hover:text-pink-500">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="bg-pink-100 p-10 text-center">
+    <h2 class="text-4xl font-semibold mb-4">New Summer Collection</h2>
+    <p class="mb-6">Trendy and Affordable Fashion</p>
+    <a href="#products" class="bg-pink-500 text-white px-6 py-2 rounded-full">Shop Now</a>
+  </section>
+
+  <!-- Product Grid -->
+  <section id="products" class="p-8">
+    <h3 class="text-2xl font-semibold mb-6 text-center">Featured Products</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Product Card Example -->    
+      <div class="product-card">
+  <img src="https://toha-art.github.io/urban-blooms/assets/images/t-shirt.jpg" alt="Product">
+  <h3>Premium T-Shirt</h3>
+  <p class="price">৳450</p>
+</div>
+
+<style>
+.product-card {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  font-family: sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: inline-block;
+  background-color: #fff;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #00aa55;
+  font-size: 16px;
+}
+</style>
+       <div class="border rounded-xl overflow-hidden shadow hover:shadow-lg">
+        <img src="https://via.placeholder.com/300" alt="Product 1" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Stylish T-Shirt</h4>
+          <p class="text-pink-600 font-bold mb-2">৳550</p>
+          <a href="https://wa.me/8801879850032" target="_blank" class="block text-center bg-pink-500 text-white py-2 rounded">Order via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+      </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-gray-100 p-6 text-center">
+    <h3 class="text-xl font-semibold mb-2">Get in Touch</h3>
+    <p>Email: deepsix842@gmail.com</p>
+    <p>Phone: 01879850032</p>
+  </section>
+
+  <footer class="text-center text-sm py-4 bg-gray-200 mt-8">
+    &copy; 2025 Urban Bloom. All rights reserved.
+  </footer>
+  </body>
+</html>
