@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Urban Blooms - Product Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .product-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .product-info {
+      margin-top: 20px;
+    }
+    .product-info h1 {
+      margin-bottom: 10px;
+    }
+    .price {
+      font-size: 20px;
+      color: #0b7285;
+    }
+    .sizes {
+      margin: 15px 0;
+    }
+    .add-to-cart {
+      background: #0b7285;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .size-chart {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product-container">
+    <img src="https://via.placeholder.com/800x400.png?text=Urban+Floral+Tee" alt="Urban Floral Tee" class="product-image" />
+    <div class="product-info">
+      <h1>Urban Floral Tee</h1>
+      <p class="price">৳750</p>
+      <p>Soft cotton tee with stylish floral design, perfect for urban looks and daily wear.</p>
+
+      <div class="sizes">
+        <strong>Available Sizes:</strong> S, M, L, XL
+      </div>
+
+      <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+
+      <div class="size-chart">
+        <h3>Size Chart:</h3>
+        <ul>
+          <li>S - Chest 36", Length 26"</li>
+          <li>M - Chest 38", Length 27"</li>
+          <li>L - Chest 40", Length 28"</li>
+          <li>XL - Chest 42", Length 29"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function addToCart() {
+      alert("Product added to cart!");
+    }
+  </script>
+
+</body>
+</html>
