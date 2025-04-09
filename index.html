@@ -90,5 +90,86 @@
   <footer class="text-center text-sm py-4 bg-gray-200 mt-8">
     &copy; 2025 Urban Bloom. All rights reserved.
   </footer>
+  <script>
+  const cart = [];
+  const cartItemsDiv = document.getElementById('cart-items');
+  const totalEl = document.getElementById('total');
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.parentElement;
+      const name = card.querySelector('h3').innerText;
+      const price = parseFloat(card.querySelector('.price').innerText);
+      addToCart(name, price);
+    });
+  });
+
+  function addToCart(name, price) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+    renderCart();
+  }
+
+  function updateQuantity(name, change) {
+    const item = cart.find(i => i.name === name);
+    if (item) {
+      item.quantity += change;
+      if (item.quantity <= 0) {
+        removeItem(name);
+      }
+      renderCart();
+    }
+  }
+
+  function removeItem(name) {
+    const index = cart.findIndex(item => item.name === name);
+    if (index > -1) {
+      cart.splice(index, 1);
+    }
+    renderCart();
+  }
+
+  function renderCart() {
+    cartItemsDiv.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.quantity;
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <span>${item.name} - $${item.price} x ${item.quantity}</span>
+        <button onclick="updateQuantity('${item.name}', 1)">+</button>
+        <button onclick="updateQuantity('${item.name}', -1)">-</button>
+        <button onclick="removeItem('${item.name}')">Remove</button>
+      `;
+      cartItemsDiv.appendChild(div);
+    });
+    totalEl.innerText = total.toFixed(2);
+    document.getElementById('cart').style.display = cart.length > 0 ? 'block' : 'none';
+  }
+
+  function showOrderForm() {
+    document.getElementById('order-form').style.display = 'block';
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
+  function submitOrder(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+
+    alert(`Thanks ${name}! Your order has been placed.`);
+
+    cart.length = 0;
+    renderCart();
+    document.getElementById('order-form').reset();
+    document.getElementById('order-form').style.display = 'none';
+  }
+</script>
   </body>
 </html>
